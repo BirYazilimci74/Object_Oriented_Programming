@@ -8,7 +8,7 @@ import states.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
-public class Game {
+public class Game extends Thread{
 
 	private static final int NEXT_PIECE_X = 11;
 	private static final int NEXT_PIECE_Y = 1;
@@ -46,7 +46,7 @@ public class Game {
 		
 		this.setCurrentPiece(PieceGenerator.generatePiece());
 		this.setNextPiece(PieceGenerator.generatePiece(Game.NEXT_PIECE_X, Game.NEXT_PIECE_Y));
-	}
+	}		
 
 	private String getTitle() {
 		return title;
@@ -91,21 +91,21 @@ public class Game {
 	private void init() {
 		this.display = new Display(this.getTitle(), Game.DISPLAY_WIDTH, Game.DISPLAY_HEIGHT);
 		this.inputHandler = new InputHandler(this.display, this);
-		GameState gameState = new GameState();
-		MenuState menuState = new MenuState();
-		SettingsState settingsState = new SettingsState();
+		//gameState = new GameState();
+		//menuState = new MenuState();
+		//settingsState = new SettingsState();
 		this.setRunning(true);
 		// Setting the currentState to gameState because we do not have
 		// any more states set up
-		//StateManage.setCurrentState(gameState);
+		// StateManage.setCurrentState(gameState);
 	}
 
 	// The method that will update all the variables
 	private void tick() {
 		// Checks if a State exists and tick()
-		//if (StateManager.getState() != null) {
+		// if (StateManager.getState() != null) {
 		// StateManager.getState().tick();
-		//}
+		// }
 
 		if (this.isPaused()) {
 			return;
@@ -116,12 +116,7 @@ public class Game {
 		if (this.field.isPieceFallen(currentPiece)) {
 			this.field.placePiece(currentPiece);
 			this.field.destroyFullRows();
-			if (!this.field.doesPieceTouchesCeiling(currentPiece))
-			{
-				this.swithToNextPiece();
-			}
-
-
+			this.swithToNextPiece();			
 		} else {
 			currentPiece.tick();
 		}
@@ -157,7 +152,7 @@ public class Game {
 		// Checks if a State exists and render()
 		// if (StateManager.getState() != null){
 		// StateManager.getState().render(this.g);
-		//}
+		// }
 
 		// End of drawing objects
 

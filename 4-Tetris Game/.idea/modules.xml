@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/4-Tetris Game.iml" filepath="$PROJECT_DIR$/.idea/4-Tetris Game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Solved/Solved.iml" filepath="$PROJECT_DIR$/Solved/Solved.iml" />
+      <module fileurl="file://$PROJECT_DIR$/With Problems/With Problems.iml" filepath="$PROJECT_DIR$/With Problems/With Problems.iml" />
+    </modules>
+  </component>
+</project>

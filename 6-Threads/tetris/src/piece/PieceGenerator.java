@@ -6,7 +6,7 @@ import game.Game;
 
 public final class PieceGenerator {
 	private static final Random random = new Random();
-	int randomNumber;
+
 	private PieceGenerator() {
 	}
 

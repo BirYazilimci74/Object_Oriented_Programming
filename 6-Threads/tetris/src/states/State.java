@@ -2,7 +2,7 @@ package states;
 
 import java.awt.*;
 
-public abstract class State{
+public abstract class State {
 
 	// Every state has it's own tick() method
 	public abstract void tick();
